@@ -1,6 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:hello_rapido/screens/ShlokaBooks.dart';
+import 'package:hello_rapido/screens/message_from_the_baby.dart';
+import 'package:hello_rapido/screens/tasker.dart';
+
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:rapido/rapido.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,28 +31,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MessageFromTheBaby(),
+
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  DocumentList documentList = DocumentList("Tasker", labels: {
-    "Date": "date",
-    "Task": "title",
-    "Priority": "pri count",
-    "Note": "subtitle"
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return DocumentListScaffold(documentList);
-  }
-}
